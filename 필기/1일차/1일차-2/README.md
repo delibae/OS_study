@@ -21,4 +21,8 @@ PCB에 들어있는 정보
 5. CPU scheduling info: priority, time_slice, policy(**비선점**) ... 
 
 6. I/O state: **File descriptor(파일 기술자)** ...
-* **VFS(Virtual File System)(커널부 상단): 거쳐서 올라가면 응용부분에서는 파일로 보임**
+* **VFS(Virtual File System)(커널부 상단): 거쳐서 올라가면 응용부분에서는 파일로 보임**  
+<br/>
+
+PCB 확인 커맨드
+<pre><code>cat /proce/{num}/status</code></pre>
