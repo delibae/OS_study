@@ -71,6 +71,21 @@ FIFO(Named pipe)
 <br/>
 
 **Shared Memory**  
+<br/>
 
 ftok: 유일한 키값을 만들어 주는 함수  
-<pre><code> shmKey = ftok("./shmview.c",'R'); ftok(const char *pathname,int proj_id);</code></pre>
+<pre><code> shmKey = ftok("./shmview.c",'R'); ftok(const char *pathname,int proj_id);</code></pre>  
+<br/>
+
+shmget : 공유 메모리 생성 함수
+<pre><code>shmId = shmget(shmKey, SHM_SIZE, 0644 | IPC_CREAT);</code></pre>  
+<br/>
+
+shmat : 공유 메모리 연결
+<pre><code>char *ptr1 = shmat(shmId, 0, 0) / shmat(int shmid, void *shmaddr, int shmflg)</code></pre>  
+<br/>  
+
+공유자원 -> 동기화 필요
+* 뮤택스(상호배제) / 세마포어 로 구현  
+<br/>
+
