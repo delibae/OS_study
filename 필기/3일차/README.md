@@ -73,6 +73,17 @@ FIFO(Named pipe)
 **Shared Memory**  
 <br/>
 
+SHM 소개
+
+- 메모리 복사 오버헤드가 없어 다른 IPC 메커니즘에 비해 속도가 빠름  
+
+- 동시에 여러 프로세스가 메모리에 접근해서 데이터 훼손이 있을 수 있기 때문에 동기화 기법이 필요  
+
+
+<br/>
+
+
+
 ftok: 유일한 키값을 만들어 주는 함수  
 <pre><code> shmKey = ftok("./shmview.c",'R'); ftok(const char *pathname,int proj_id);</code></pre>  
 <br/>
@@ -87,5 +98,9 @@ shmat : 공유 메모리 연결
 
 공유자원 -> 동기화 필요
 * 뮤택스(상호배제) / 세마포어 로 구현  
-<br/>
+<br/>  
 
+
+**Message Queue**  
+
+- 동작 멈춤 blocking
