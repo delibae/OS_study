@@ -103,4 +103,15 @@ shmat : 공유 메모리 연결
 
 **Message Queue**  
 
+<pre><code>ipcs -q</code></pre>
+
+msgget : 메세지 큐를 생성
+<pre><code>int msgget ( key_t key, int msgflg )</pre></code>
+
+msgsnd : 메세지 큐로 데이터를 전송
+<pre><code>int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg);</pre></code>
+
+msgrcv : 메세지 큐에서 데이터를 수신
+<pre><code>ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp, int msgflg);</pre></code>
+
 - 동작 멈춤 blocking
