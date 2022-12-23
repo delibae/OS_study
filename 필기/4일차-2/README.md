@@ -54,3 +54,17 @@ Semaphore
 공유자원 보호
 - 공유자원을 액세스 하는 경우 atomicity를 보호하기 위해 mutex 사용
 
+생성
+<pre><code>int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *attr);</code></pre>
+
+<pre><code>pthread_mutex_t [mutex variable name] = PTHREAD_MUTEX_INITIALIZER;</code></pre>
+
+제거
+<pre><code>int pthread_mutex_destroy(pthread_mutex_t *mutex);</code></pre>
+
+Recursive Mutex
+- 스레드가 자신이 이미 lock을 한 mute를 lock하려고 하면 deadlock이 발생
+- Recursive MUTEX를 만들 때는 static initializer를 사용하는 방법과 pthread_mutexattr_t 구조체에 RECURSIVE 속성을 설정하여 MUTEX를 초기화 하는 방법이 있음
+
+
+share 파일 retry 뭔지 알아오기
